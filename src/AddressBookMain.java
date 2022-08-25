@@ -52,6 +52,20 @@ public class AddressBookMain {
                 case 9:
                     obj.searchByState();
                     break;
+                case 10:
+                    obj.displayPeopleByRegion(AddressBookServices.personByCity);
+                    break;
+                case 11:
+                    obj.displayPeopleByRegion(AddressBookServices.personByState);
+                    break;
+                case 12:
+                    System.out.println("Enter \n1.Display By City\n2.Display By State");
+                    int countChoice = sc.nextInt();
+                    if (countChoice == 1)
+                        obj.countPeopleByRegion(AddressBookServices.personByCity);
+                    else
+                        obj.countPeopleByRegion(AddressBookServices.personByState);
+                    break;
                 case 0:
                     System.exit(0);
                     break;

@@ -7,25 +7,16 @@ public class AddContact {
     private String address;
     private String city;
     private String state;
-    private int zipNo;
-    private long phoneNo;
+    private int zip;
+    private long phoneNumber;
     private String email;
-
-    public AddContact(String firstName, String lastName, String address, String city, String state, int zipNo,
-                      long phoneNo, String email) {
-        super();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zipNo = zipNo;
-        this.phoneNo = phoneNo;
-        this.email = email;
-    }
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -44,6 +35,14 @@ public class AddContact {
         this.address = address;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String getState() {
         return state;
     }
@@ -52,12 +51,20 @@ public class AddContact {
         this.state = state;
     }
 
-    public int getZipNo() {
-        return zipNo;
+    public int getZip() {
+        return zip;
     }
 
-    public void setZipNo(int zipNo) {
-        this.zipNo = zipNo;
+    public void setZip(int zip) {
+        this.zip = zip;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -68,29 +75,10 @@ public class AddContact {
         this.email = email;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public long getPhoneNo() {
-        return phoneNo;
-    }
-
-    public void setPhoneNo(long phoneNo) {
-        this.phoneNo = phoneNo;
-    }
-
     @Override
     public String toString() {
-        return "\n AddContact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city="
-                + city + ", state=" + state + ", zipNo=" + zipNo + ", phoneNo=" + phoneNo + ", email=" + email + "]";
+        return " \n ContactPerson [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city="
+                + city + ", state=" + state + ", zip=" + zip + ", phoneNumber=" + phoneNumber + ", email=" + email
+                + "]";
     }
 }

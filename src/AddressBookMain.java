@@ -20,10 +20,11 @@ public class AddressBookMain {
      */
         while (true) {
             System.out.println("Enter to avail services: ");
-            System.out.println("1: To add contact \n2: To edit existing contact \n3: To delete contact "
-                    + "\n4: To display contact list \n5: find contacts "
-                    + " \n6: Add Multiple Address Book \n7: Add Contact to multi Address Book \n8: display Multiple Address book \n0: To Exit");
-
+            System.out.println(
+                    "1: To add contact \n2: To edit existing contact \n3: To delete contact "
+                            + "\n4: To display contact list \n5: find contacts "
+                            + " \n6: Add Multiple Address Book \n7: Add Contact to multi Address Book \n8: display Multiple Address book "
+                            + "\n9: find by city\n0: To Exit");
             int ch = sc.nextInt();
 
             switch (ch) {
@@ -51,6 +52,8 @@ public class AddressBookMain {
                 case 8:
                     multi.printaddressBook();
                     break;
+                case 9:
+                    add.findbyCity();
                 case 0:
                     sc.close();
                     return;

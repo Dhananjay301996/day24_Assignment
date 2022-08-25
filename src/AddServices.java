@@ -19,6 +19,19 @@ public class AddServices {
             duplicateCheck();
         }
     }
+     /*
+    duplicate check for duplicate entries
+     */
+
+    public void duplicateCheck() {
+        System.out.print(" Please enter the first name: ");
+        name = s.next();
+        for(AddContact i : contacts) {
+            if(i.getFirstName().equals(name)) {
+                System.out.println(" Given name already exists");
+            } return;
+        }  addPerson();
+    }
     /*
     Adding Person data
      */
@@ -58,9 +71,45 @@ public class AddServices {
 
         System.out.println(contacts);
     }
+    /*
+    find data by city and state wise
+     */
+    public AddContact findbyCity() { // to find the contacts
+        System.out.println("\n Enter the city : ");
+        String name = s.next();
+        int duplicate = 0; // will increment the duplicate if found multiple contacts with same name
+        AddContact temp = null;
+
+        for (AddContact contact : contacts) {
+
+            if (contact.getCity().equals(name)) {
+
+                duplicate++;
+                temp = contact;
+                System.out.println(contact);
+            }
+        }
+        if (duplicate == 1) {
+            return temp;
+
+        } else if (duplicate > 1) {
+            System.out.print(" There are multiple contacts with given name.\n Please enter their state id: ");
+            String state = s.next();
+            for (AddContact contact : contacts) {
+                if (contact.getCity().equals(name) && contact.getState().equals(state)) {
+                    return contact;
+                }
+            }
+        } else {
+            System.out.println("No contact with the given cty. Please enter the correct city");
+            findContact();
+        }
+        return temp;
+    }
+
 
     /*
-    Finding contacts
+    Finding contacts by first name mail id
      */
     public AddContact findContact() {
         System.out.println("\n Enter the first name of the contact to edit: ");
@@ -155,20 +204,6 @@ public class AddServices {
                 break;
         }
         System.out.println("Contacts Updated: " + contact);
-    }
-    /*
-    duplicate check for duplicate entries
-     */
-    public void duplicateCheck() {
-        System.out.print(" Please enter the first name: ");
-        name = s.next();
-        for (AddContact i : contacts) {
-            if (i.getFirstName().equals(name)) {
-                System.out.println(" Given name already exists");
-            }
-            return;
-        }
-        addPerson();
     }
 
     /*

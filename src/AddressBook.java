@@ -100,13 +100,22 @@ public class AddressBook {
 
     }
     /*
-    sort name by alphabetically
+    sort contact by name
      */
     public void sortByName() {
         List<ContactDetails> list = contactDetailsList.stream().collect(Collectors.toList());
         list.stream().sorted((g1, g2) -> ((String) g1.getFirstName()).compareTo(g2.getFirstName()))
                 .forEach(contact -> System.out.println(contact.getFirstName() + " " + contact.getLastName()));
     }
+    /*
+    sort contact by city
+     */
+    public void sortByCity() {
+        List<ContactDetails> list = contactDetailsList.stream().collect(Collectors.toList());
+        list.stream().sorted((g1, g2) -> ((String) g1.getCity()).compareTo(g2.getCity()))
+                .forEach(contact -> System.out.println(contact.getFirstName() + " " + contact.getLastName()));
+    }
+
     /*
     edit contact
      */

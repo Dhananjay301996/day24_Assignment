@@ -1,4 +1,11 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
+
 
 /**
  * This is address book program
@@ -45,7 +52,15 @@ public class AddressBookMain {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        System.out.println("Welcome To Address Book Program");
+        Scanner Scan = new Scanner(System.in);
+
+            Path file = Path.of("C:\\Users\\HP\\Desktop\\day27.txt");
+        String readData =  Files.readString(file);
+        System.out.println(readData);
+
+
         AddressBookMain addressBookMain = new AddressBookMain();
         addressBookMain.choose();
     }
